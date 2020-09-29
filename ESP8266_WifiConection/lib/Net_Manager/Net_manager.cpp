@@ -31,7 +31,7 @@ void Net_manager::loop()
         previousMillis = millis();
         wifi_Status = false;
         Serial.print(".");
-        ledmanager.blinkG(250);
+        // ledmanager.blinkG(250);
         WiFi.mode(WIFI_STA);  //para que no inicie el SoftAP en el modo normal
         WiFi.begin(net_manager.getSsid(), net_manager.getPassword()); 
       }
@@ -43,7 +43,7 @@ void Net_manager::loop()
       wifi_Status = true;
       Serial.print("IP_address: "); 
       Serial.println(WiFi.localIP());
-      ledmanager.greenOf();
+    //   ledmanager.greenOf();
     }
 }
 
@@ -66,7 +66,7 @@ void Net_manager::accessPointConnection()
     boolean result = WiFi.softAP(ssidAP);//mando nombre de la red creada, se le puede añadir la contraseña
     if(result)
     {
-      ledmanager.greenOn();
+    //   ledmanager.greenOn();
     }
     IPAddress myIP = WiFi.softAPIP();
     Serial.print("IP:");

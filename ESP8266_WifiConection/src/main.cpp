@@ -10,7 +10,8 @@ void setup()
 {
   net_manager.begin();
   eepromdatastored.begin();
-  boot_button.begin(0);
+  boot_button.begin(0);             //flash button pin for NodeMCU_ESP8266
+  // ledmanager.begin(16);             //led pin for NodeMCU_ESP8266
  
 }
  
