@@ -12,7 +12,7 @@ void configurePage()
 Net_manager::Net_manager()
 {
     ssidAP = "ESP_red";
-    wifi_Status = 0;
+    wifi_Flag = false;
 }
 
 void Net_manager::begin()
@@ -29,22 +29,27 @@ void Net_manager::loop()
       if (WiFi.status() != WL_CONNECTED)
       {
         previousMillis = millis();
-        wifi_Status = false;
+        wifi_Flag = false;
         Serial.print(".");
         ledcontrol.blinkLed(250);
         WiFi.mode(WIFI_STA);  //para que no inicie el SoftAP en el modo normal
         WiFi.begin(net_manager.getSsid(), net_manager.getPassword()); 
       }
     }
-    if (WiFi.status() == WL_CONNECTED && wifi_Status == false)
+    if (WiFi.status() == WL_CONNECTED && wifi_Flag == false)
     {
       Serial.println("");
       Serial.println("WiFi connected");
-      wifi_Status = true;
+      wifi_Flag = true;
       Serial.print("IP_address: "); 
       Serial.println(WiFi.localIP());
       ledcontrol.ledOff();
     }
+}
+
+bool Net_manager::getWifiFlag()
+{
+    return wifi_Flag;
 }
 
 String Net_manager::getSsid()

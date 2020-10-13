@@ -17,10 +17,10 @@ void ThingSpeakManager::begin(unsigned long _chanelID, const char * _APIKey)
 
 void ThingSpeakManager::loop(uint8_t _Field)
 {
-  if (publishTimer.timerOver())
+  if (publishTimer.timerOver() && net_manager.getWifiFlag())
   {
-    publishTimer.setTimer(12000);
     thingspeakmanager.sendData(_Field);
+    publishTimer.setTimer(12000);
   }
 }
 

@@ -3,12 +3,13 @@
 	#include <Arduino.h>
 	#include "TimerMs.h"
 
-	TimerMs timer;
+	
 
 	class ledControl
 	{
 	private:
 	  //variables privadas
+	  TimerMs timer;// is important declare the instance of TimerMS in the class
 	  unsigned long blinkTime;
 	  uint8_t ledPin;
 

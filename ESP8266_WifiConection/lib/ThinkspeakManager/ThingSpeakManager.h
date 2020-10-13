@@ -4,12 +4,14 @@
 #include <ESP8266WiFi.h>
 #include <ThingSpeak.h>
 #include "TimerMs.h"
+#include "Net_manager.h"
 
-TimerMs publishTimer;
+
 
 class ThingSpeakManager
 {
 private:
+    TimerMs publishTimer;// is important declare the instance of TimerMS in the class
     unsigned long channel_ID;
     const char * myAPIKey;
 public:

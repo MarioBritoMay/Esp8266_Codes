@@ -14,7 +14,7 @@ class Net_manager
     String ssidAP;
     unsigned long previousMillis;
 	unsigned long currentMillis;
-    uint8_t wifi_Status;
+    bool wifi_Flag;
     String ssid;
     String password;
 
@@ -25,6 +25,7 @@ class Net_manager
     //methods
     void begin();
     void loop();
+    bool getWifiFlag();
     String getSsid();
     String getPassword();
     void accessPointConnection();
