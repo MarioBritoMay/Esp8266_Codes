@@ -1,18 +1,24 @@
-#include "timerMs.h"
+#include "TimerMs.h"
 
-timerMs::timerMs()
+TimerMs::TimerMs()
+{
+    TimerMs(1000);
+}
+
+TimerMs::TimerMs(unsigned long _ms)
 {
     startTime = 0;
     timer = 0;
+    setTimer(_ms);
 }
 
-void timerMs::setTimer(unsigned long _ms)
+void TimerMs::setTimer(unsigned long _ms)
 {
     startTime = millis();
     timer = _ms;
 }
 
-bool timerMs::timerOver()
+bool TimerMs::timerOver()
 {
     unsigned long now = millis();
     if ((unsigned long) (now - startTime) >= timer) 
@@ -20,5 +26,3 @@ bool timerMs::timerOver()
     else
     return false;
 }
-
-timerMs timerms;

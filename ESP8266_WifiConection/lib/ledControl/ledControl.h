@@ -1,7 +1,9 @@
 	#ifndef LEDCONTROL_H
 	#define LEDCONTROL_H
 	#include <Arduino.h>
-	#include "timerMs.h"
+	#include "TimerMs.h"
+
+	TimerMs timer;
 
 	class ledControl
 	{

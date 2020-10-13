@@ -2,18 +2,18 @@
 #define TIMERMS_H
 #include <Arduino.h>
 
-class timerMs
+class TimerMs
 {
 private:
     unsigned long startTime;
     unsigned long timer;
 public:
-    timerMs();
+    TimerMs();
+    TimerMs(unsigned long _ms);
     void setTimer(unsigned long _ms);
     bool timerOver();
     
 
 };
 
-extern timerMs timerms;
 #endif

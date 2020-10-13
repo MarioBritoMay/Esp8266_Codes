@@ -6,6 +6,7 @@
 #include <EepromDataStored.h>
 #include <ledControl.h>
 
+
 class Net_manager
 {
     private:

@@ -14,12 +14,12 @@
 
   void ledControl::ledLoop()
   {
-    if(timerms.timerOver())
+    if(timer.timerOver())
     {
       if(blinkTime > 0) 
       {
         digitalWrite(ledPin, !digitalRead(ledPin));
-        timerms.setTimer(blinkTime);
+        timer.setTimer(blinkTime);
       }
     }
   }
@@ -28,7 +28,7 @@
   {
     digitalWrite(ledPin, 0);
     blinkTime = ms;
-    timerms.setTimer(blinkTime);
+    timer.setTimer(blinkTime);
   }
 
   void ledControl::ledOn()
