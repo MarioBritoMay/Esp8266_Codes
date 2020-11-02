@@ -1,7 +1,7 @@
 #include "OTAManager.h";
 
-#define FIRMWARE_VERSION 1
-#define UPDATE_JSON_URL "https://hl110.lucushost.org/archivos"
+// #define FIRMWARE_VERSION 1
+#define UPDATE_JSON_URL "https://hl110.lucushost.org/archivos"//se necesita verificar el servidor
 
 OTAManager::OTAManager()
 {
@@ -12,7 +12,7 @@ void OTAManager::begin()
 {
   if (net_manager.getWifiFlag())
   {
-    otamanager.CheckUpdates();
+    otamanager.CheckUpdates();//funcion para checar actualizaciones, necesita añadirce un control de versiones
   }
 }
 
