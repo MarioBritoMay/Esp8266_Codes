@@ -4,6 +4,7 @@
 #include <Boot_button.h>
 #include <EepromDataStored.h>
 #include <httpsServer.h>
+#include <OTAManager.h>
  
 void setup()
 {
@@ -18,4 +19,5 @@ void loop()
   net_manager.loop();
   boot_button.loop();
   httpsserver.loop();
+  otamanager.loop();
 }

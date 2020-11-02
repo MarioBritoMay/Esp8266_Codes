@@ -4,6 +4,8 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 #include <WiFiClientSecure.h>
+#include <ESP8266httpUpdate.h>
+#include <Net_manager.h>
 
 class OTAManager
 {
@@ -18,8 +20,7 @@ class OTAManager
     //contruct
     OTAManager();
     void begin();
-    void loop();
-    void sendData();
+    void CheckUpdates();
     //methods
    
 };

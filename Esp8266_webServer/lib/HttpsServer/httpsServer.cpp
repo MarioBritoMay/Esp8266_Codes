@@ -1,7 +1,5 @@
 #include "HttpsServer.h";
 
-
-
 HttpsServer::HttpsServer()
 {
 
@@ -74,7 +72,6 @@ void HttpsServer::sendData()
     }
     Serial.println("==========");
     Serial.println("closing connection");
-    delay(2000);  //GET Data at every 2 seconds
 }
 
 HttpsServer httpsserver;
